@@ -22,6 +22,14 @@ where is the line number where the instruction appears.
 	* it finds an error in the file an error occured
 * If you can’t malloc anymore, print the error message Error: malloc failed, followed by a new line, and exit with status EXIT_FAILURE.
 * You have to use malloc and free and are not allowed to use any other function from man malloc (realloc, calloc, …)
+## Compilation & Output
+Your code will be compiled this way:
+```$ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty```
+- Any output must be printed on stdout
+- Any error message must be printed on stderr
+- Here is a link to a GitHub repository that could help you making sure your errors are printed on stderr
 
-contributers 
+---
+
+## contributers 
 * [joseph wainaina](https://github.com/josephynaina)
