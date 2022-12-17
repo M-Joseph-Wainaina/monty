@@ -1,6 +1,16 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+/*standard library headers*/
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -12,9 +22,23 @@
  */
 typedef struct stack_s
 {
-	int n;struct stack_s *prev;
+	int n;
+	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+/**
+ * struct stack - holds info about the stack
+ * @head: pointer to the first element of linked list
+ * @tail: pointer to the last element of the stack or queue
+ * @i: integer representation of the postion in the stack or queue
+ */
+
+typedef struct stack_info {
+	stack_t *head;
+	stack_t *tail;
+} stack_info;
+
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -27,4 +51,12 @@ typedef struct instruction_s{
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/*function prototypes*/
+/*errors.c*/
+void _eputs(char *str);
+void _eputchar(char c);
+
+/*string.c*/
+
 #endif /*main.h*/
